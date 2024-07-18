@@ -26,7 +26,7 @@ export default function SignUp() {
     event.preventDefault();
     try {
       await authService.createAccount(data)
-      
+      navigate('/');
 
     } catch (error) {
       alert(error)

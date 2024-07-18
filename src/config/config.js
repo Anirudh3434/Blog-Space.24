@@ -1,9 +1,9 @@
 const config = {
-  url: import.meta.env.VITE_APPWRITE_URL,
-  projectId: import.meta.env.VITE_APPWRITE_PROJECT_ID,
-  databaseId: import.meta.env.VITE_APPWRITE_DATABASE_ID,
-  collectionId: import.meta.env.VITE_APPWRITE_COLLECTION_ID,
-  bucketId: import.meta.env.VITE_APPWRITE_BUCKET_ID,
+  url: 'https://cloud.appwrite.io/v1',
+  projectId: '6692218d002b811344cc',
+  databaseId: '669222b50032e16be93f',
+  collectionId: '6692234b0022e6946345',
+  bucketId: '6692250f001e49f19746',
 };
 
 export default config;

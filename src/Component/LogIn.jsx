@@ -21,13 +21,14 @@ export default function LogIn() {
         const userData = authService.getCurrentUser()
         if(userData){
           dispatch(logIn(userData))
+          navigate('/')
         }
        }
     
       
       setEmail('');
       setPassword('');
-      navigate('/');
+   ;
     } catch (error) {
       console.error('Login failed:', error);
     }
