@@ -8,7 +8,7 @@ import Home from './Component/Home';
 import SignUp from './Component/SignUp';
 import LogIn from './Component/LogIn';
 import './styles.css'; 
-import Store from './Store/Store.js';  // Ensure Store is properly exported from this file
+import Store from './Store/Store.js';  
 import DashBoard from './Component/DashBoard.jsx';
 import RTE from './Component/RTE.jsx';
 import Post from './Component/Post.jsx';
@@ -26,7 +26,7 @@ const AnimatedRoutes = () => {
             <Route path="login" element={<LogIn />} />
             <Route path="dashboard" element={<DashBoard />} />
             <Route path="editor" element={<RTE />} />
-            <Route path="/post/:id" component={Post} />
+            <Route path="/post/:UserID" component={Post} />
          
 
           </Route>

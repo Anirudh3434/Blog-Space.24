@@ -50,17 +50,17 @@ function Cards() {
         }
     }, [email]);
 
-    console.log(posts);
+    console.log('post : ', posts);
 
     return (
         <div className='cards-container'>
             {posts.map(post => (
                 <div className='card' key={post.$id}>
-                    {post.PreviewImage && <img src={post.PreviewImage} alt={post.Title}  />}
+                    {post.PreviewImage && <img src={post.PreviewImage} alt={post.Title} />}
                     <div className='title-area'>
                         <h3>{post.Title}</h3>
-                       <span>{parse(post.Content)}</span>
-                        <Link to={`/post/${post.$id}`}><span>Read more</span></Link>
+                        <span>{parse(post.Content)}</span>
+                        
                     </div>
                 </div>
             ))}
@@ -69,6 +69,3 @@ function Cards() {
 }
 
 export default Cards;
-
-
-

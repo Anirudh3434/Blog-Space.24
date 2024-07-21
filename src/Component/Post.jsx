@@ -4,25 +4,29 @@ import service from '../Appwrite/configure';
 import parse from 'html-react-parser';
 
 function Post() {
-    const { id } = useParams();
+    const { UserID } = useParams();
     const [post, setPost] = useState(null);
 
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const fetchedPost = await service.getPost(id);
-                setPost(fetchedPost);
+                const fetchedPost = await service.getPost(UserID);
+              console.log(fetchPost)
             } catch (error) {
                 console.error('Error fetching post:', error);
             }
         };
 
         fetchPost();
-    }, [id]);
+    }, [UserID]);
 
-    console.log(post)
+    console.log(post);
 
-return (
+    if (!post) {
+        return <div>Loading...</div>;
+    }
+
+    return (
         <div className='post-Container'>
             <h1>{post.Title}</h1>
             <div>{parse(post.Content)}</div>

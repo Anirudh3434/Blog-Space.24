@@ -24,7 +24,7 @@ export default function DashBoard() {
 
     return (
        <div className='header'>
-       <h1>Welcome<span>{userName}</span></h1>
+       <h1 className='head'>Welcome<span>{userName}</span></h1>
         <div className="dashboard-container">
             <div className="user-info">
               

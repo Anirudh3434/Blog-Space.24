@@ -129,7 +129,7 @@ function RTE() {
 
             <div className='upload-section'>
                 <label htmlFor="image">Add Preview Image</label>
-                <FileUploader handleChange={handleChange} name="file" types={fileTypes} label='Upload preview image'/>
+                <FileUploader  handleChange={handleChange} name="file" types={fileTypes} label='Upload preview image'/>
             </div>
         </div>
     );
