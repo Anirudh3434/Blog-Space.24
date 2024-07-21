@@ -25,19 +25,19 @@ function Cards() {
                 const fetchedPosts = await service.getAllpost(email);
                 if (fetchedPosts) {
                     const data = fetchedPosts.documents;
-
-                    // Fetch preview images
-                    const postsWithPreviews = await Promise.all(data.map(async (post) => {
+                    const updatedPosts = [];
+                    
+                    for (const post of data) {
                         try {
-                            const preview = await service.getPreview(post.fileID);
-                            post.PreviewImage = preview.href; // Assuming the preview object has an href property
+                            const preview = await service.getPreview(post.Image);
+                            post.PreviewImage = preview.href;
                         } catch (error) {
                             console.error('Error fetching preview image:', error);
                         }
-                        return post;
-                    }));
+                        updatedPosts.push(post);
+                    }
 
-                    setPosts(postsWithPreviews);
+                    setPosts(updatedPosts);
                 }
             } catch (error) {
                 console.error('Error fetching posts:', error);
@@ -45,17 +45,21 @@ function Cards() {
         };
 
         fetchUserData();
-        fetchPosts();
+        if (email) {
+            fetchPosts();
+        }
     }, [email]);
+
+    console.log(posts);
 
     return (
         <div className='cards-container'>
             {posts.map(post => (
                 <div className='card' key={post.$id}>
-                    
+                    {post.PreviewImage && <img src={post.PreviewImage} alt={post.Title}  />}
                     <div className='title-area'>
                         <h3>{post.Title}</h3>
-                        <div><span>{parse(post.Content)}</span></div>
+                       <span>{parse(post.Content)}</span>
                         <Link to={`/post/${post.$id}`}><span>Read more</span></Link>
                     </div>
                 </div>
@@ -65,3 +69,6 @@ function Cards() {
 }
 
 export default Cards;
+
+
+
