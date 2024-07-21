@@ -19,22 +19,6 @@ function App() {
  
    
 
-  useEffect(() => {
-   
-    const checkUser = async () => {
-      try {
-        const user = await authService.getCurrentUser();
-  
-        if (user) {
-          dispatch(logIn(user));
-        
-        }
-      } catch (error) {
-        alert('No user logged in', error);
-      }
-    };
-    checkUser();
-  }, [dispatch, navigate]);
 
 
  
