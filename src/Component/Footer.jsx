@@ -6,10 +6,11 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-section">
         <h4>Projects</h4>
-        <ul>
-          <li><a href="https://24portfolio.netlify.app">Portfolio</a></li>
-          <li><a href="https://24weather.netlify.app">Weather.24</a></li>
-        </ul>
+       
+          <a href="https://24portfolio.netlify.app">Portfolio</a>
+        <a href="https://24weather.netlify.app">Weather.24</a>
+          <a href="https://24chat.netlify.app">Chat.24</a>
+       
       </div>
       <div className="footer-section">
         <h4>Contact Us</h4>

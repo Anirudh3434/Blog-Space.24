@@ -123,13 +123,14 @@ function RTE() {
                         initialValue={article}
                         onChange={(e) => setArticle(e.target.getContent())}
                     />
-                    <button className='start' onClick={handleSubmit} disabled={isSubmitting}>Submit</button>
+                   
                 </div>
             </div>
 
             <div className='upload-section'>
                 <label htmlFor="image">Add Preview Image</label>
                 <FileUploader  handleChange={handleChange} name="file" types={fileTypes} label='Upload preview image'/>
+                <button className='start' onClick={handleSubmit} disabled={isSubmitting}>Submit</button>
             </div>
         </div>
     );

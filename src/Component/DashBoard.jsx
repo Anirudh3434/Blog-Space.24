@@ -26,15 +26,14 @@ export default function DashBoard() {
        <div className='header'>
        <h1 className='head'>Welcome<span>{userName}</span></h1>
         <div className="dashboard-container">
-            <div className="user-info">
-              
-            </div>
+          
             <div className="card-area">
                 <Cards />
                 <Link to='/editor'>
                     <AddCard />
                 </Link>
             </div>
-        </div></div>
+        </div>
+        </div>
     );
 }
